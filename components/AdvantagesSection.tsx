@@ -1,7 +1,6 @@
 "use client";
 import { useReveal } from "@/lib/useReveal";
 
-// 💡 قاموس اللغات الشامل لقسم المميزات والتحديات
 const dictionary = {
   ar: {
     badge: "ما تحتاج معرفته",
@@ -54,88 +53,58 @@ export default function AdvantagesSection({ lang = "ar" }: { lang?: "ar" | "en" 
   const current = dictionary[lang] || dictionary["ar"];
 
   return (
-    <section id="advantages" className="py-24" style={{ backgroundColor: "var(--bg, #0d0d0d)" }}>
+    <section id="advantages" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        
-        {/* عنوان القسم */}
-        <div ref={ref} className="reveal text-center mb-16">
-          <span className="text-[#f97316] text-sm font-bold uppercase tracking-widest mb-3 block">
+        <div ref={ref} className="reveal text-center mb-10">
+          <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest mb-2 block">
             {current.badge}
           </span>
-          <h2 className="text-4xl md:text-5xl font-black" style={{ color: "var(--text-primary, #fff)" }}>
-            {current.title1} <span className="text-gray-500">&</span> {current.title2}
+          <h2 className="text-3xl md:text-4xl font-black text-[#095c56]">
+            {current.title1} <span className="text-[#095c56]/30">&</span> {current.title2}
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          
-          {/* المميزات (Advantages) */}
-          <div className="rounded-2xl p-8 border" style={{ backgroundColor: "var(--card-bg, #141414)", borderColor: "var(--border, #242424)" }}>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-green-400 text-xl">✓</div>
-              <h3 className="text-2xl font-black" style={{ color: "var(--text-primary, #fff)" }}>
-                {current.advHeader}
-              </h3>
+        <div className="grid lg:grid-cols-2 gap-6">
+          <div className="rounded-xl p-6 border bg-white border-[#095c56]/15 shadow-sm">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-9 h-9 rounded-lg bg-[#095c56]/10 flex items-center justify-center text-[#095c56] text-lg">✓</div>
+              <h3 className="text-xl font-black text-[#095c56]">{current.advHeader}</h3>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {current.advantages.map((a, i) => (
-                <div key={i} 
-                  className="flex gap-4 p-4 rounded-xl border transition-colors group"
-                  style={{ backgroundColor: "var(--nav-bg, #0a0a0a)", borderColor: "var(--border, #242424)" }}
-                >
-                  <span className="text-2xl shrink-0">{a.icon}</span>
+                <div key={i} className="flex gap-3 p-3 rounded-lg border transition-colors group bg-[rgba(9,92,86,0.04)] border-[#095c56]/10 hover:border-[#095c56]/25">
+                  <span className="text-xl shrink-0">{a.icon}</span>
                   <div>
-                    <div className="font-semibold mb-1 group-hover:text-green-400 transition-colors" style={{ color: "var(--text-primary, #fff)" }}>
-                      {a.title}
-                    </div>
-                    <div className="text-sm" style={{ color: "var(--text-secondary, #9ca3af)" }}>
-                      {a.body}
-                    </div>
+                    <div className="font-semibold mb-0.5 text-[#095c56] text-sm">{a.title}</div>
+                    <div className="text-xs text-[#095c56]/60">{a.body}</div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* التحديات (Challenges) */}
-          <div className="rounded-2xl p-8 border" style={{ backgroundColor: "var(--card-bg, #141414)", borderColor: "var(--border, #242424)" }}>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-[#f97316]/10 flex items-center justify-center text-[#f97316] text-xl">⚡</div>
-              <h3 className="text-2xl font-black" style={{ color: "var(--text-primary, #fff)" }}>
-                {current.chalHeader}
-              </h3>
+          <div className="rounded-xl p-6 border bg-white border-[#095c56]/15 shadow-sm">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-9 h-9 rounded-lg bg-[#f97316]/10 flex items-center justify-center text-[#f97316] text-lg">⚡</div>
+              <h3 className="text-xl font-black text-[#095c56]">{current.chalHeader}</h3>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {current.challenges.map((c, i) => (
-                <div key={i} 
-                  className="flex gap-4 p-4 rounded-xl border transition-colors group"
-                  style={{ backgroundColor: "var(--nav-bg, #0a0a0a)", borderColor: "var(--border, #242424)" }}
-                >
-                  <span className="text-2xl shrink-0">{c.icon}</span>
+                <div key={i} className="flex gap-3 p-3 rounded-lg border transition-colors group bg-[rgba(9,92,86,0.04)] border-[#095c56]/10 hover:border-[#f97316]/25">
+                  <span className="text-xl shrink-0">{c.icon}</span>
                   <div>
-                    <div className="font-semibold mb-1 group-hover:text-[#f97316] transition-colors" style={{ color: "var(--text-primary, #fff)" }}>
-                      {c.title}
-                    </div>
-                    <div className="text-sm" style={{ color: "var(--text-secondary, #9ca3af)" }}>
-                      {c.body}
-                    </div>
+                    <div className="font-semibold mb-0.5 text-[#095c56] text-sm">{c.title}</div>
+                    <div className="text-xs text-[#095c56]/60">{c.body}</div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-
         </div>
 
-        {/* المقولة الختامية */}
-        <div className="mt-10 text-center p-6 border rounded-2xl" 
-          style={{ backgroundColor: "rgba(249, 115, 22, 0.05)", borderColor: "rgba(249, 115, 22, 0.2)" }}
-        >
-          <p className="text-[#fb923c] font-semibold text-lg">
-            {current.successQuote}
-          </p>
+        <div className="mt-8 text-center p-5 border rounded-xl bg-[rgba(249,115,22,0.04)] border-[#f97316]/20">
+          <p className="text-[#f97316] font-semibold text-base">{current.successQuote}</p>
         </div>
-
       </div>
     </section>
   );

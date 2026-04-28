@@ -7,12 +7,10 @@ const config: Config = {
         orange: {
           DEFAULT: "#f97316",
           light: "#fb923c",
-          dark: "#ea580c",
         },
-        dark: {
-          DEFAULT: "#0a0a0a",
-          card: "#141414",
-          border: "#242424",
+        teal: {
+          DEFAULT: "#095c56",
+          light: "#0d7a72",
         },
       },
       fontFamily: {

@@ -144,8 +144,7 @@ export default function InfiniteCarousel({ items, speed = 40, cardWidth = 320 }:
                       draggable={false}
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center text-4xl"
-                      style={{ background: "var(--bg-secondary)" }}>
+                    <div className="w-full h-full flex items-center justify-center text-4xl bg-[rgba(9,92,86,0.04)]">
                       {item.icon || "📄"}
                     </div>
                   )}
@@ -169,15 +168,15 @@ export default function InfiniteCarousel({ items, speed = 40, cardWidth = 320 }:
               )}
 
               {/* Title */}
-              <h3 className="font-bold text-sm mb-1 leading-snug" style={{ color: "var(--text-primary)" }}>
+              <h3 className="font-bold text-sm mb-1 leading-snug text-[#095c56]">
                 {item.title}
               </h3>
               {item.subtitle && (
-                <p className="text-xs mb-2" style={{ color: "var(--orange)", fontWeight: 700 }}>{item.subtitle}</p>
+                <p className="text-xs mb-2 text-[#f97316]" style={{ fontWeight: 700 }}>{item.subtitle}</p>
               )}
 
               {/* Description */}
-              <p className="text-xs leading-relaxed" style={{ color: "var(--text-secondary)", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+              <p className="text-xs leading-relaxed text-[#095c56]/60" style={{ display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
                 {item.desc}
               </p>
 
@@ -192,10 +191,10 @@ export default function InfiniteCarousel({ items, speed = 40, cardWidth = 320 }:
 
               {/* Date + CTA */}
               {(item.date || item.onClick) && (
-                <div className="flex items-center justify-between mt-3 pt-3" style={{ borderTop: "1px solid var(--border)" }}>
-                  {item.date && <span className="text-xs" style={{ color: "var(--text-muted)" }}>{item.date}</span>}
+                <div className="flex items-center justify-between mt-3 pt-3 border-t border-[#095c56]/15">
+                  {item.date && <span className="text-xs text-[#095c56]/40">{item.date}</span>}
                   {item.onClick && (
-                    <span className="text-xs font-bold" style={{ color: "#f97316" }}>التفاصيل ←</span>
+                    <span className="text-xs font-bold text-[#f97316]">التفاصيل ←</span>
                   )}
                 </div>
               )}

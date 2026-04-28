@@ -27,33 +27,41 @@ export default function HeroSection({ lang = "ar" }: { lang?: "ar" | "en" }) {
   const current = dictionary[lang] || dictionary["ar"];
 
   return (
-    <section id="hero" className="relative pt-40 pb-20 px-6 min-h-[90vh] flex flex-col justify-center bg-[#0d0d0d] overflow-hidden">
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#f97316]/10 blur-[120px] rounded-full pointer-events-none" />
+    <section id="hero" className="relative pt-28 pb-14 px-6 min-h-[80vh] flex flex-col justify-center bg-white overflow-hidden">
+      {/* Animated background orb */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#f97316]/8 blur-[100px] rounded-full pointer-events-none animate-float" />
+      
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <div ref={ref} className="reveal">
-          <span className="inline-block bg-[#141414] border border-[#f97316]/30 text-[#f97316] text-xs md:text-sm font-bold px-5 py-2 rounded-full mb-8">
+          <span className="inline-block bg-white border border-[#095c56]/20 text-[#f97316] text-xs md:text-sm font-bold px-4 py-1.5 rounded-full mb-5 shadow-sm animate-fade-in-up">
             {current.badge}
           </span>
-          <h1 className="text-6xl md:text-8xl font-black text-white mb-6 leading-tight">
+          
+          <h1 className="text-5xl md:text-6xl font-black text-[#095c56] mb-5 leading-tight animate-fade-in-up animate-delay-1">
             {current.title1} <br />
             <span className="gradient-text">{current.title2}</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed max-w-2xl mx-auto">
+          
+          <p className="text-base md:text-lg text-[#095c56]/65 mb-6 leading-relaxed max-w-2xl mx-auto animate-fade-in-up animate-delay-2">
             {current.subtitle}
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <a href="#quiz" className="w-full sm:w-auto bg-[#f97316] text-white px-8 py-4 rounded-full font-bold hover:bg-[#ea580c] transition-colors shadow-lg shadow-orange-500/20">
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10 animate-fade-in-up animate-delay-3">
+            <a href="#quiz" className="w-full sm:w-auto bg-[#f97316] text-white px-6 py-3 rounded-full font-bold hover:bg-[#ea580c] transition-all shadow-lg shadow-orange-500/15 text-sm hover-scale hover-lift">
               {current.cta1}
             </a>
-            <a href="#about" className="w-full sm:w-auto bg-transparent border border-[#242424] text-white px-8 py-4 rounded-full font-bold hover:border-[#f97316] hover:text-[#f97316] transition-colors">
+            <a href="#about" className="w-full sm:w-auto bg-transparent border border-[#095c56]/20 text-[#095c56] px-6 py-3 rounded-full font-bold hover:border-[#f97316] hover:text-[#f97316] transition-all text-sm hover-scale">
               {current.cta2}
             </a>
           </div>
-          <div className="grid grid-cols-3 gap-4 border-t border-[#242424] pt-10">
+          
+          <div className="grid grid-cols-3 gap-4 border-t border-[#095c56]/15 pt-8 animate-fade-in-up animate-delay-4">
             {current.stats.map((s, i) => (
-              <div key={i}>
-                <div className="text-3xl md:text-4xl font-black text-[#f97316] mb-1">{s.num}</div>
-                <div className="text-gray-500 text-xs md:text-sm font-bold">{s.label}</div>
+              <div key={i} className="group cursor-default">
+                <div className="text-2xl md:text-3xl font-black text-[#f97316] mb-1 group-hover:scale-110 transition-transform duration-300 inline-block">
+                  {s.num}
+                </div>
+                <div className="text-[#095c56]/50 text-xs font-bold">{s.label}</div>
               </div>
             ))}
           </div>
@@ -61,9 +69,9 @@ export default function HeroSection({ lang = "ar" }: { lang?: "ar" | "en" }) {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
-        <span className="text-xs text-gray-500">اسحب للأسفل</span>
-        <div className="w-5 h-8 border border-gray-600 rounded-full flex items-start justify-center pt-1.5">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 animate-fade-in-up animate-delay-5">
+        <span className="text-xs text-[#095c56]/50">اسحب للأسفل</span>
+        <div className="w-5 h-8 border border-[#095c56]/30 rounded-full flex items-start justify-center pt-1.5">
           <div className="w-1 h-2 bg-[#f97316] rounded-full animate-bounce" />
         </div>
       </div>

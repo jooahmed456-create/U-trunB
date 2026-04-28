@@ -3,14 +3,15 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import VisionMissionSection from "@/components/VisionMissionSection";
 import AdvantagesSection from "@/components/AdvantagesSection";
 import FieldsSection from "@/components/FieldsSection";
 import QuizSection from "@/components/QuizSection";
 import SuccessStoriesSection from "@/components/SuccessStoriesSection";
-import FaqSection from "@/components/FaqSection";
 import ActivitiesSection from "@/components/ActivitiesSection";
-import ResourcesSection from "@/components/ResourcesSection";
 import MediaSection from "@/components/MediaSection";
+import FaqSection from "@/components/FaqSection";
+import ResourcesSection from "@/components/ResourcesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -28,11 +29,12 @@ export default function Home() {
   }, []);
 
   return (
-    <div dir={lang === "ar" ? "rtl" : "ltr"} className="bg-[#0a0a0a]">
+    <div dir={lang === "ar" ? "rtl" : "ltr"} className="bg-white">
       <Navbar lang={lang} setLang={setLang} />
       <main>
         <HeroSection lang={lang} />
         <AboutSection lang={lang} />
+        <VisionMissionSection lang={lang} />
         <AdvantagesSection lang={lang} />
         <FieldsSection lang={lang} />
         <QuizSection lang={lang} />

@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { useReveal } from "@/lib/useReveal";
 
-// 💡 القاموس الشامل للاختبار (6 أسئلة + النتائج)
 const dictionary = {
   ar: {
     badge: "اكتشف نفسك",
@@ -15,7 +14,6 @@ const dictionary = {
     nextBtn: "التالي ←",
     prevBtn: "← السابق",
     firstStepLabel: "خطواتك الأولى:",
-    resourcesLink: "استكشف مصادر",
     questions: [
       {
         q: "بتحب تقضي وقتك في إيه أكتر؟",
@@ -75,26 +73,26 @@ const dictionary = {
     results: {
       design: {
         title: "مجال التصميم 🎨",
-        desc: "عندك حس بصري وإبداعي قوي! بتحب التفاصيل والشكل الجذاب، وده بيخليك مناسب جداً لمجالات زي الجرافيك ديزاين، المونتاج، وتصميم السوشيال ميديا.", //
-        tips: ["ابدأ بـ Canva أو Photoshop", "اعمل portfolio بأعمالك", "انضم لمجتمعات التصميم"], //
+        desc: "عندك حس بصري وإبداعي قوي! بتحب التفاصيل والشكل الجذاب، وده بيخليك مناسب جداً لمجالات زي الجرافيك ديزاين، المونتاج، وتصميم السوشيال ميديا.",
+        tips: ["ابدأ بـ Canva أو Photoshop", "اعمل portfolio بأعمالك", "انضم لمجتمعات التصميم"],
         emoji: "🎨"
       },
       writing: {
         title: "مجال الكتابة ✍️",
-        desc: "عندك قدرة مميزة على التعبير بالكلام! بتعرف توصل أفكارك بشكل واضح ومقنع، وده مناسب لمجالات زي كتابة المحتوى، الترجمة، والكوبي رايتينج.", //
-        tips: ["ابدأ بالتدريب على الكتابة يومياً", "ابني Portfolio من نماذج أعمالك", "جرب منصات المستقلين"], //
+        desc: "عندك قدرة مميزة على التعبير بالكلام! بتعرف توصل أفكارك بشكل واضح ومقنع، وده مناسب لمجالات زي كتابة المحتوى، الترجمة، والكوبي رايتينج.",
+        tips: ["ابدأ بالتدريب على الكتابة يومياً", "ابني Portfolio من نماذج أعمالك", "جرب منصات المستقلين"],
         emoji: "✍️"
       },
       programming: {
         title: "مجال البرمجة 💻",
-        desc: "عندك تفكير منطقي وحب للتكنولوجيا! بتستمتع بحل المشاكل وفهم الأنظمة، وده يخليك مناسب لمجالات زي تطوير المواقع والتطبيقات.", //
-        tips: ["ابدأ بـ HTML وCSS وJavaScript", "أكمل دورات برمجة مجانية", "اعمل مشاريع صغيرة ونزلها على GitHub"], //
+        desc: "عندك تفكير منطقي وحب للتكنولوجيا! بتستمتع بحل المشاكل وفهم الأنظمة، وده يخليك مناسب لمجالات زي تطوير المواقع والتطبيقات.",
+        tips: ["ابدأ بـ HTML وCSS وJavaScript", "أكمل دورات برمجة مجانية", "اعمل مشاريع صغيرة ونزلها على GitHub"],
         emoji: "💻"
       },
       marketing: {
         title: "مجال التسويق 📣",
-        desc: "عندك مهارة في التأثير على الناس وفهمهم! بتحب التريندات والتفاعل، وده مناسب لمجالات زي التسويق الرقمي وإدارة السوشيال ميديا والإعلانات.", //
-        tips: ["احصل على شهادة في التسويق الرقمي", "ابدأ بإدارة صفحة خاصة بك", "تعلم إعلانات Meta وGoogle"], //
+        desc: "عندك مهارة في التأثير على الناس وفهمهم! بتحب التريندات والتفاعل، وده مناسب لمجالات زي التسويق الرقمي وإدارة السوشيال ميديا والإعلانات.",
+        tips: ["احصل على شهادة في التسويق الرقمي", "ابدأ بإدارة صفحة خاصة بك", "تعلم إعلانات Meta وGoogle"],
         emoji: "📣"
       },
     }
@@ -110,7 +108,6 @@ const dictionary = {
     nextBtn: "Next →",
     prevBtn: "← Previous",
     firstStepLabel: "Your First Steps:",
-    resourcesLink: "Explore Resources for",
     questions: [
       {
         q: "How do you prefer to spend your time?",
@@ -239,28 +236,26 @@ export default function QuizSection({ lang = "ar" }: { lang?: "ar" | "en" }) {
   if (submitted && resultKey) {
     const r = (currentDict.results as any)[resultKey];
     return (
-      <section id="quiz" className="py-24" style={{ backgroundColor: "var(--bg, #0d0d0d)" }}>
+      <section id="quiz" className="py-16 bg-white">
         <div className="max-w-2xl mx-auto px-6 text-center">
-          <div className="bg-[#141414] border border-[#f97316]/40 rounded-3xl p-10 shadow-2xl shadow-orange-500/10">
-            <div className="text-7xl mb-6 animate-bounce">{r.emoji}</div>
-            <h2 className="text-3xl font-black text-white mb-3">{currentDict.resultHeader}</h2>
-            <h3 className="text-4xl font-black gradient-text mb-6">{r.title}</h3>
-            <p className="text-gray-300 leading-relaxed mb-8 text-lg">{r.desc}</p>
+          <div className="bg-white border border-[#f97316]/40 rounded-2xl p-8 shadow-xl shadow-orange-500/10">
+            <div className="text-6xl mb-5 animate-bounce">{r.emoji}</div>
+            <h2 className="text-2xl font-black text-[#095c56] mb-2">{currentDict.resultHeader}</h2>
+            <h3 className="text-3xl font-black gradient-text mb-5">{r.title}</h3>
+            <p className="text-[#095c56]/70 leading-relaxed mb-6 text-base">{r.desc}</p>
             
-            <div className="bg-[#0a0a0a] rounded-2xl p-6 mb-8 text-right border border-[#242424]">
-              <p className="text-[#f97316] font-bold mb-4">{currentDict.firstStepLabel}</p>
+            <div className="bg-[rgba(9,92,86,0.04)] rounded-xl p-5 mb-6 text-right border border-[#095c56]/15">
+              <p className="text-[#f97316] font-bold mb-3 text-sm">{currentDict.firstStepLabel}</p>
               {r.tips.map((t: string, i: number) => (
-                <div key={i} className="flex items-center gap-3 text-gray-300 text-sm mb-3">
+                <div key={i} className="flex items-center gap-3 text-[#095c56]/70 text-sm mb-2">
                   <span className="text-[#f97316] font-bold">✓</span> {t}
                 </div>
               ))}
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button onClick={reset} className="border border-[#242424] text-gray-300 font-bold px-8 py-3.5 rounded-2xl hover:border-[#f97316] hover:text-[#f97316] transition-all">
-                {currentDict.restartBtn}
-              </button>
-            </div>
+            <button onClick={reset} className="border border-[#095c56]/15 text-[#095c56]/70 font-bold px-6 py-2.5 rounded-xl hover:border-[#f97316] hover:text-[#f97316] transition-all text-sm">
+              {currentDict.restartBtn}
+            </button>
           </div>
         </div>
       </section>
@@ -270,50 +265,46 @@ export default function QuizSection({ lang = "ar" }: { lang?: "ar" | "en" }) {
   const q = currentDict.questions[current];
 
   return (
-    <section id="quiz" className="py-24" style={{ backgroundColor: "var(--bg, #0d0d0d)" }}>
+    <section id="quiz" className="py-16 bg-white">
       <div className="max-w-3xl mx-auto px-6">
-        
-        {/* 💡 العنوان الضخم (Mega Title) */}
-        <div ref={ref} className="reveal text-center mb-12">
-          <span className="text-[#f97316] text-sm font-bold uppercase tracking-widest mb-3 block">
+        <div ref={ref} className="reveal text-center mb-8">
+          <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest mb-2 block">
             {currentDict.badge}
           </span>
-          <h2 className="text-5xl md:text-7xl font-black text-white mb-4 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-black text-[#095c56] mb-3 leading-tight">
             {currentDict.title1} <span className="gradient-text">{currentDict.title2}</span>
           </h2>
-          <p className="text-gray-400 text-lg md:text-xl font-medium">{currentDict.subtitle}</p>
+          <p className="text-[#095c56]/65 text-base md:text-lg font-medium">{currentDict.subtitle}</p>
         </div>
 
-        {/* Progress bar */}
-        <div className="flex justify-center items-center gap-2 mb-10">
+        <div className="flex justify-center items-center gap-2 mb-6">
           {Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} className={`h-1.5 rounded-full transition-all duration-500 ${i === current ? "w-8 bg-[#f97316]" : i < current ? "w-4 bg-[#f97316]/40" : "w-4 bg-[#242424]"}`} />
+            <div key={i} className={`h-1.5 rounded-full transition-all duration-500 ${i === current ? "w-8 bg-[#f97316]" : i < current ? "w-4 bg-[#f97316]/40" : "w-4 bg-[#095c56]/15"}`} />
           ))}
         </div>
 
-        {/* Question card */}
-        <div className="bg-[#141414] border border-[#242424] rounded-[32px] p-8 md:p-12 shadow-2xl relative overflow-hidden">
-          <div className="flex items-center gap-4 mb-8">
-            <span className="bg-[#f97316] text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center shadow-lg shadow-orange-500/20">
+        <div className="bg-white border border-[#095c56]/15 rounded-2xl p-6 md:p-8 shadow-lg relative overflow-hidden">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="bg-[#f97316] text-white text-base font-black w-9 h-9 rounded-full flex items-center justify-center shadow-md shadow-orange-500/20">
               {current + 1}
             </span>
-            <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">{q.q}</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-[#095c56] leading-tight">{q.q}</h3>
           </div>
           
-          <div className="grid gap-4">
+          <div className="grid gap-3">
             {q.options.map((opt) => (
               <button
                 key={opt.letter}
                 onClick={() => select(opt.letter)}
-                className={`flex items-center justify-between p-5 rounded-2xl border transition-all text-right group ${answers[current] === opt.letter ? "bg-[#f97316]/10 border-[#f97316] shadow-lg shadow-orange-500/5" : "bg-[#0a0a0a] border-[#242424] hover:border-[#f97316]/40"}`}
+                className={`flex items-center justify-between p-4 rounded-xl border transition-all text-right group ${answers[current] === opt.letter ? "bg-[#f97316]/8 border-[#f97316] shadow-md shadow-orange-500/5" : "bg-[rgba(9,92,86,0.04)] border-[#095c56]/15 hover:border-[#f97316]/40"}`}
               >
-                <div className="flex items-center gap-4">
-                  <span className="text-3xl grayscale group-hover:grayscale-0 transition-all">{opt.icon}</span>
-                  <span className={`text-lg font-bold ${answers[current] === opt.letter ? "text-white" : "text-gray-400 group-hover:text-gray-200"}`}>
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl grayscale group-hover:grayscale-0 transition-all">{opt.icon}</span>
+                  <span className={`text-base font-bold ${answers[current] === opt.letter ? "text-[#095c56]" : "text-[#095c56]/60 group-hover:text-[#095c56]/90"}`}>
                     {opt.text}
                   </span>
                 </div>
-                <span className={`w-8 h-8 rounded-full border flex items-center justify-center text-xs font-black transition-all ${answers[current] === opt.letter ? "bg-[#f97316] border-[#f97316] text-white" : "border-[#242424] text-gray-500 group-hover:border-[#f97316]/40"}`}>
+                <span className={`w-7 h-7 rounded-full border flex items-center justify-center text-[10px] font-black transition-all ${answers[current] === opt.letter ? "bg-[#f97316] border-[#f97316] text-white" : "border-[#095c56]/15 text-[#095c56]/40 group-hover:border-[#f97316]/40"}`}>
                   {opt.letter}
                 </span>
               </button>
@@ -321,28 +312,26 @@ export default function QuizSection({ lang = "ar" }: { lang?: "ar" | "en" }) {
           </div>
         </div>
 
-        {/* Navigation */}
-        <div className="flex justify-between items-center mt-10">
+        <div className="flex justify-between items-center mt-8">
           <button onClick={prevStep} disabled={current === 0}
-            className="border border-[#242424] text-gray-400 px-8 py-3 rounded-2xl disabled:opacity-20 hover:border-[#f97316] hover:text-[#f97316] transition-all font-bold">
+            className="border border-[#095c56]/15 text-[#095c56]/60 px-6 py-2.5 rounded-xl disabled:opacity-20 hover:border-[#f97316] hover:text-[#f97316] transition-all font-bold text-sm">
             {currentDict.prevBtn}
           </button>
           
-          <span className="text-gray-600 font-mono font-bold">{current + 1} / 6</span>
+          <span className="text-[#095c56]/40 font-mono font-bold text-sm">{current + 1} / 6</span>
 
           {current < 5 ? (
             <button onClick={nextStep} disabled={!answers[current]}
-              className="bg-[#f97316] disabled:opacity-30 text-white px-10 py-3 rounded-2xl font-black shadow-xl shadow-orange-500/20 hover:bg-[#ea580c] transition-all">
+              className="bg-[#f97316] disabled:opacity-30 text-white px-8 py-2.5 rounded-xl font-black shadow-lg shadow-orange-500/15 hover:bg-[#ea580c] transition-all text-sm">
               {currentDict.nextBtn}
             </button>
           ) : (
             <button onClick={computeResult} disabled={!answers.every(Boolean)}
-              className="bg-[#f97316] disabled:opacity-30 text-white px-10 py-3 rounded-2xl font-black shadow-xl shadow-orange-500/20 hover:bg-[#ea580c] transition-all">
+              className="bg-[#f97316] disabled:opacity-30 text-white px-8 py-2.5 rounded-xl font-black shadow-lg shadow-orange-500/15 hover:bg-[#ea580c] transition-all text-sm">
               🎯 {currentDict.viewResult}
             </button>
           )}
         </div>
-
       </div>
     </section>
   );
