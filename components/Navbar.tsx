@@ -35,17 +35,13 @@ export default function Navbar({ lang, setLang }: { lang: "ar" | "en"; setLang: 
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${scrolled ? "backdrop-blur-md border-b" : "bg-transparent"}`}
       style={scrolled ? { backgroundColor: "var(--nav-bg)", borderColor: "var(--border)" } : {}}
     >
-      <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between h-14">
+      <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
         <a href="#hero" className="flex items-center gap-2 group flex-shrink-0">
-          <div className="w-7 h-7">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M32 8 L32 22 Q32 32 22 32 L8 32" stroke="#095c56" strokeWidth="4" strokeLinecap="round"/>
-              <path d="M14 26 L8 32 L14 38" stroke="#f97316" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
-          <span className="font-black text-lg" style={{ color: "var(--text-primary)" }}>
-            U-TURN <span style={{ color: "#f97316" }}>B</span>
-          </span>
+          <img 
+            src="https://res.cloudinary.com/dkh59ytfc/image/upload/v1777393428/ChatGPT_Image_Apr_28_2026_07_23_36_PM_fptutl.png" 
+            alt="U-TURN B Logo" 
+            className="h-16 w-auto object-contain" 
+          />
         </a>
 
         <ul className="hidden lg:flex items-center gap-4">
@@ -69,7 +65,6 @@ export default function Navbar({ lang, setLang }: { lang: "ar" | "en"; setLang: 
           <span className={`block w-5 h-0.5 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`} style={{ background: "var(--text-primary)" }} />
         </button>
       </nav>
-
       {menuOpen && (
         <div className="lg:hidden border-t" style={{ backgroundColor: "var(--nav-bg)", borderColor: "var(--border)" }}>
           <div className="flex items-center justify-center gap-3 px-6 pt-3 pb-2">

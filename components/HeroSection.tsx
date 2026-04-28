@@ -1,8 +1,6 @@
 "use client";
 import { useReveal } from "@/lib/useReveal";
 
-const LOGO_URL = "https://res.cloudinary.com/dkh59ytfc/image/upload/v1777393428/ChatGPT_Image_Apr_28_2026_07_23_36_PM_fptutl.png";
-
 const dictionary = {
   ar: {
     badge: "حملة توعوية طلابية — كلية الإعلام، جامعة القاهرة",
@@ -35,16 +33,7 @@ export default function HeroSection({ lang = "ar" }: { lang?: "ar" | "en" }) {
       
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <div ref={ref} className="reveal">
-          {/* Campaign Logo */}
-          <div className="animate-fade-in-up mb-4 flex justify-center">
-            <img
-              src={LOGO_URL}
-              alt="U-TURN B Campaign Logo"
-              className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-lg hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-
-          <span className="inline-block bg-white border border-[#095c56]/20 text-[#f97316] text-xs md:text-sm font-bold px-4 py-1.5 rounded-full mb-5 shadow-sm animate-fade-in-up animate-delay-1">
+          <span className="inline-block bg-white border border-[#095c56]/20 text-[#f97316] text-xs md:text-sm font-bold px-4 py-1.5 rounded-full mb-5 shadow-sm animate-fade-in-up">
             {current.badge}
           </span>
           

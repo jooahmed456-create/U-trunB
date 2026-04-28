@@ -32,8 +32,12 @@ export default function AboutSection({ lang = "ar" }: { lang?: "ar" | "en" }) {
           </div>
 
           {/* Image side — left in RTL */}
-          <div className="w-full aspect-[4/3] bg-white/10 border-2 border-dashed border-white/20 rounded-2xl flex items-center justify-center overflow-hidden">
-            <span className="text-white/30 text-5xl">🖼️</span>
+          <div className="w-full aspect-[4/3] bg-white/10 border-2 border-dashed border-white/20 rounded-2xl flex items-center justify-center overflow-hidden p-4">
+            <img
+              src="https://res.cloudinary.com/dkh59ytfc/image/upload/v1777393428/ChatGPT_Image_Apr_28_2026_07_23_36_PM_fptutl.png"
+              alt="U-TURN B Campaign Logo"
+              className="w-full h-full object-contain"
+            />
           </div>
         </div>
       </div>
