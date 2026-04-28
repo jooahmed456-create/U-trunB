@@ -46,11 +46,11 @@ export default function VisionMissionSection({ lang = "ar" }: { lang?: "ar" | "e
 
   return (
     <section id="vision" className="py-16 bg-white">
-      {/* Smooth transition divider from About section */}
-      <div className="teal-divider mb-12" />
-
       <div className="max-w-5xl mx-auto px-6">
         <div ref={ref} className="reveal text-center mb-10">
+          <span className="text-[#f97316] text-xs font-bold uppercase tracking-widest mb-2 block">
+            {current.badge}
+          </span>
           <h2 className="text-3xl md:text-4xl font-black text-[#095c56]">
             {current.title1} <span className="text-[#095c56]/30">&</span> {current.title2}
           </h2>
