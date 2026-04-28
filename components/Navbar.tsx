@@ -6,10 +6,10 @@ const navLinks = [
   { href: "#fields",     labelAr: "المجالات",     labelEn: "Fields" },
   { href: "#quiz",       labelAr: "اعرف مجالك",   labelEn: "Quiz" },
   { href: "#stories",    labelAr: "قصص نجاح",    labelEn: "Stories" },
-  { href: "#faq",        labelAr: "أسئلة شائعة",  labelEn: "FAQ" },
   { href: "#activities", labelAr: "أنشطتنا",      labelEn: "Activities" },
-  { href: "#resources",  labelAr: "مصادر",        labelEn: "Resources" },
   { href: "#media",      labelAr: "تغطية إعلامية", labelEn: "Media" },
+  { href: "#faq",        labelAr: "أسئلة شائعة",  labelEn: "FAQ" },
+  { href: "#resources",  labelAr: "مصادر",        labelEn: "Resources" },
   { href: "#contact",    labelAr: "تواصل معنا",   labelEn: "Contact" },
 ];
 
@@ -35,12 +35,12 @@ export default function Navbar({ lang, setLang }: { lang: "ar" | "en"; setLang: 
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${scrolled ? "backdrop-blur-md border-b" : "bg-transparent"}`}
       style={scrolled ? { backgroundColor: "var(--nav-bg)", borderColor: "var(--border)" } : {}}
     >
-      <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
+      <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between h-28">
         <a href="#hero" className="flex items-center gap-2 group flex-shrink-0">
           <img 
             src="https://res.cloudinary.com/dkh59ytfc/image/upload/v1777393428/ChatGPT_Image_Apr_28_2026_07_23_36_PM_fptutl.png" 
             alt="U-TURN B Logo" 
-            className="h-16 w-auto object-contain" 
+            className="h-24 w-auto object-contain" 
           />
         </a>
 

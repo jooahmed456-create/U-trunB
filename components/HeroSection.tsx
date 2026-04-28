@@ -68,13 +68,6 @@ export default function HeroSection({ lang = "ar" }: { lang?: "ar" | "en" }) {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 animate-fade-in-up animate-delay-5">
-        <span className="text-xs text-[#095c56]/50">اسحب للأسفل</span>
-        <div className="w-5 h-8 border border-[#095c56]/30 rounded-full flex items-start justify-center pt-1.5">
-          <div className="w-1 h-2 bg-[#f97316] rounded-full animate-bounce" />
-        </div>
-      </div>
     </section>
   );
 }

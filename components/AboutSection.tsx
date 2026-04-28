@@ -16,23 +16,11 @@ export default function AboutSection({ lang = "ar" }: { lang?: "ar" | "en" }) {
             <p className="text-white/80 text-base leading-relaxed mb-6">
               نحن طلاب بكلية الإعلام – جامعة القاهرة، نقدم حملة توعوية تهدف إلى نشر ثقافة العمل الحر بين الشباب، وتوضيح الفرص الحقيقية التي يتيحها هذا المجال. نسعى إلى تصحيح المفاهيم الخاطئة حول الفريلانس، وتمكين الشباب من اتخاذ خطوات واثقة نحو بناء مستقبل مهني مستقل.
             </p>
-            <h3 className="text-lg font-bold text-[#f97316] mb-3">الأهداف</h3>
-            <ul className="space-y-2.5">
-              {[
-                "تصحيح المفاهيم الخاطئة عن الفريلانس",
-                "تشجيع الشباب على خوض تجربة الفريلانس",
-                "توضيح مزايا وتحديات العمل الحر بشكل واقعي"
-              ].map((goal, i) => (
-                <li key={i} className="flex items-center gap-3 text-white/90 text-sm">
-                  <span className="w-5 h-5 rounded-full bg-[#f97316] flex items-center justify-center text-white text-[10px] font-bold shrink-0">✓</span>
-                  {goal}
-                </li>
-              ))}
-            </ul>
+
           </div>
 
           {/* Image side — left in RTL */}
-          <div className="w-full aspect-[4/3] bg-white/10 border-2 border-dashed border-white/20 rounded-2xl flex items-center justify-center overflow-hidden p-4">
+          <div className="w-full aspect-[4/3] bg-white border-2 border-dashed border-white/20 rounded-2xl flex items-center justify-center overflow-hidden p-4">
             <img
               src="https://res.cloudinary.com/dkh59ytfc/image/upload/v1777393428/ChatGPT_Image_Apr_28_2026_07_23_36_PM_fptutl.png"
               alt="U-TURN B Campaign Logo"
